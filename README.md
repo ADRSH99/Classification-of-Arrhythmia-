@@ -1,43 +1,65 @@
-# Classification-of-Arrhythmia-
+🫀 Classification of Arrhythmia
 
-This project implements a machine learning pipeline to classify different types of cardiac arrhythmia using ECG data. The classification model is trained on the arrhythmia dataset and deployed as a web application. The repository includes data processing, model training, and deployment scripts, along with a Dockerfile for containerized deployment.
+This project implements a machine learning pipeline to classify various types of cardiac arrhythmias using ECG data. The trained model is deployed as a web application for real-time prediction. This repository includes scripts for data preprocessing, model training, deployment using Flask, and a Dockerfile for containerization.
 
-Technologies Used
+🚀 Technologies Used
 
-    Python: Main programming language for data processing, model training, and web app development.
+    Python: Core language for all processing and development
 
-    Pandas, NumPy: For data manipulation and numerical operations.
+    Pandas, NumPy: Data manipulation and numerical operations
 
-    Matplotlib: For data visualization.
+    Matplotlib: Visualizations
 
-    Scikit-learn: For machine learning utilities including imputation, scaling, PCA, and SVM classifier.
+    Scikit-learn: ML tools (imputation, scaling, PCA, SVM)
 
-    Imbalanced-learn: For handling class imbalance using RandomOverSampler.
+    Imbalanced-learn: RandomOverSampler to handle class imbalance
 
-    Flask: Web framework to build the deployment app.
+    Flask: Lightweight web framework for app deployment
 
-    Pickle: For saving and loading trained models and preprocessing objects.
+    Pickle: Model and object serialization
 
-    Docker: For containerized deployment.
+    Docker: Containerized deployment
 
-    HTML: For web app templates.
+    HTML: Frontend templates
 
-How It Works
+⚙️ How It Works
 
-    Data Preprocessing: Missing values are imputed using mean strategy, and erroneous height values are corrected.
+    Data Preprocessing
 
-    Handling Imbalance: Random oversampling is applied to balance the classes.
+        Missing values are imputed using the mean strategy.
 
-    Feature Scaling and Dimensionality Reduction: StandardScaler is applied, followed by PCA retaining 98% variance.
+        Outlier corrections (e.g., unrealistic height values) are applied.
 
-    Model Training: A Kernel SVM with RBF kernel is trained on the processed data.
+    Class Imbalance Handling
 
-    Model Saving: The trained model along with scaler and PCA objects are saved using pickle.
+        RandomOverSampler is used to balance class distribution.
 
-    Deployment: The Flask app loads these objects to predict arrhythmia class from user input via a web interface.
+    Feature Engineering
 
-How to Deploy
-Prerequisites
+        StandardScaler is used for scaling.
+
+        PCA is applied to retain 98% of the variance.
+
+    Model Training
+
+        A Kernel SVM (RBF) classifier is trained on the preprocessed dataset.
+
+    Model Persistence
+
+        The trained model, PCA, and scaler are saved using pickle:
+
+            final_model.pkl
+
+            scaler.pkl
+
+            pca.pkl
+
+    Web Deployment
+
+        A Flask app loads the pickled model, PCA, and scaler to predict arrhythmia classes from uploaded CSV files via a user-friendly interface.
+
+🧪 How to Use
+📁 Prerequisites
 
     Python 3.7+
 
@@ -47,16 +69,16 @@ Deployment Without Docker
 
     Clone the repository:
 
-bash
-git clone https://github.com/ADRSH99/Classification-of-Arrhythmia-.git
-cd Classification-of-Arrhythmia-
+    bash
+    git clone https://github.com/ADRSH99/Classification-of-Arrhythmia-.git
+    cd Classification-of-Arrhythmia-
 
 Install dependencies:
 
-bash
-pip install -r requirements.txt
+    bash
+    pip install -r requirements.txt
 
-Ensure the following files are present in the root directory:
+Ensure the following files are in the root directory:
 
     final_model.pkl
 
@@ -64,8 +86,8 @@ Ensure the following files are present in the root directory:
 
     pca.pkl
 
-    arrhythmia.csv (in data/ folder)
-
+    data/arrhythmia.csv (dataset for reference or testing)
+    
 Run the Flask app:
 
     bash
@@ -77,14 +99,14 @@ Deployment Using Docker
 
     Clone the repository:
 
-bash
-git clone https://github.com/ADRSH99/Classification-of-Arrhythmia-.git
-cd Classification-of-Arrhythmia-
+    bash
+    git clone https://github.com/ADRSH99/Classification-of-Arrhythmia-.git
+    cd Classification-of-Arrhythmia-
 
-Build the Docker image:
+    Build the Docker image:
 
-bash
-docker build -t arrhythmia-classification .
+    bash
+    docker build -t arrhythmia-classification .
 
 Run the Docker container:
 
@@ -93,15 +115,33 @@ Run the Docker container:
 
     Access the app at http://localhost:5000 in your web browser.
 
-Model Details
+🧠 Model Overview
 
-    Algorithm: Kernelized Support Vector Machine (SVM) with RBF kernel
+    Algorithm: Kernelized SVM (RBF Kernel)
 
-    Preprocessing: Mean imputation, random oversampling, standard scaling, PCA (98% variance)
+    Preprocessing:
 
-    Classes: 16 classes including Normal, Ischemic changes, Myocardial Infarction types, Tachycardia, Bradycardia, etc.
+        Mean imputation for missing values
 
-    Performance: The model is trained and tested on the arrhythmia dataset with balanced classes.
+        Oversampling for class balance
+
+        Standard scaling
+
+        PCA (retain 98% variance)
+
+    Classes: 16 types of arrhythmias including:
+
+        Normal
+
+        Ischemic changes
+
+        Myocardial infarction variants
+
+        Tachycardia
+
+        Bradycardia
+
+    Input Features: ~280+ ECG-based features
 
 References
 
