@@ -1,5 +1,4 @@
 # Classification-of-Arrhythmia-
-Classification of Arrhythmia
 
 This project implements a machine learning pipeline to classify different types of cardiac arrhythmia using ECG data. The classification model is trained on the arrhythmia dataset and deployed as a web application. The repository includes data processing, model training, and deployment scripts, along with a Dockerfile for containerized deployment.
 
@@ -22,22 +21,6 @@ Technologies Used
     Docker: For containerized deployment.
 
     HTML: For web app templates.
-
-Project Structure
-
-    final-deployment.py: Script for data preprocessing, training the Kernel SVM model with PCA and scaling, and saving the model artifacts.
-
-    app.py: Flask application for serving the arrhythmia classification model via a web interface.
-
-    Dockerfile: Docker configuration to containerize the application.
-
-    requirements.txt: Python dependencies required for the project.
-
-    final_model.pkl, scaler.pkl, pca.pkl: Saved model and preprocessing objects.
-
-    templates/: HTML templates for the Flask web app.
-
-    data/: Contains the arrhythmia dataset (arrhythmia.csv).
 
 How It Works
 
