@@ -1,4 +1,4 @@
-🫀 Classification of Arrhythmia
+#🫀 Classification of Arrhythmia
 
 This project implements a machine learning pipeline to classify various types of cardiac arrhythmias using ECG data. The trained model is deployed as a web application for real-time prediction. This repository includes scripts for data preprocessing, model training, deployment using Flask, and a Dockerfile for containerization.
 
